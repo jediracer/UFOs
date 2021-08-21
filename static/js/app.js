@@ -2,7 +2,7 @@
 const tableData = data;
 
 //reference the HTML table using 3d
-var tbody = 3d.select("tbody");
+var tbody = d3.select("tbody");
 
 //simple js console.log statement
 function printHello(){
@@ -25,9 +25,9 @@ function buildTable(data) {
         let cell = row.append("td");
         cell.text(val);
         }
-      );
-    });
-}
+      )
+    })
+};
 
 function handleClick(){
     // Grab the datetime value from the filter
@@ -44,7 +44,7 @@ function handleClick(){
     // @NOTE: If no date was entered, then filteredData will
     // just be the original tableData.
     buildTable(filteredData);
-}
+};
 
 // Attach an event to listen for the form button
 d3.selectAll("#filter-btn").on("click", handleClick);
